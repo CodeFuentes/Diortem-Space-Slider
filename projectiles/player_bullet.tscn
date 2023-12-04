@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjbd6o4sjvwul"]
+
+[ext_resource type="PackedScene" uid="uid://cf5hvpn6xmi8s" path="res://projectiles/projectile.tscn" id="1_btsi4"]
+[ext_resource type="Script" path="res://projectiles/player_bullet.gd" id="2_41okj"]
+[ext_resource type="Texture2D" uid="uid://b4n3eljuwhidg" path="res://sprites/bullet.png" id="2_dv0mk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8u5u1"]
+size = Vector2(8, 4)
+
+[node name="PlayerBullet" groups=["Projectiles"] instance=ExtResource("1_btsi4")]
+script = ExtResource("2_41okj")
+
+[node name="CollisionShape" parent="." index="0"]
+shape = SubResource("RectangleShape2D_8u5u1")
+
+[node name="Sprite" parent="." index="2"]
+texture = ExtResource("2_dv0mk")

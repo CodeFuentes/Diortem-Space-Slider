@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxvkb1rtbd65n"]
+
+[ext_resource type="Texture2D" uid="uid://d4cqxf7f1jsbf" path="res://floortest.png" id="1_h637v"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_eyo8e"]
+polygon = PackedVector2Array(-171, -10, -171, 8, 159, 9, 159, -10, 159, -10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfcdg"]
+size = Vector2(332, 20)
+
+[node name="FloorTest" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 239
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+scale = Vector2(1, 1)
+occluder = SubResource("OccluderPolygon2D_eyo8e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-6, -0.499999)
+scale = Vector2(10.3125, 0.59375)
+texture = ExtResource("1_h637v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 0)
+shape = SubResource("RectangleShape2D_bfcdg")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)

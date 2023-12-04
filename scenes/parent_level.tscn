@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwa2r1jv5e4vq"]
+
+[ext_resource type="Script" path="res://scenes/parent_level.gd" id="1_0cxgo"]
+[ext_resource type="Texture2D" uid="uid://urp6fchdnhim" path="res://sprites/bg.png" id="1_sqsx0"]
+[ext_resource type="PackedScene" uid="uid://c1rq04b6lusko" path="res://entities/player.tscn" id="2_xmjm2"]
+[ext_resource type="PackedScene" uid="uid://dxvkb1rtbd65n" path="res://scenes/floor_test.tscn" id="3_wmm8j"]
+
+[node name="ParentLevel" type="Node2D"]
+position = Vector2(325, 129)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_0cxgo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(192.667, 191.333)
+scale = Vector2(1.535, 1)
+texture = ExtResource("1_sqsx0")
+region_enabled = true
+region_rect = Rect2(-328, -161.5, 1500, 1500)
+
+[node name="Player" parent="." instance=ExtResource("2_xmjm2")]
+metadata/_edit_lock_ = true
+
+[node name="FloorTest" parent="." instance=ExtResource("3_wmm8j")]
+position = Vector2(4, 102)
+metadata/_edit_lock_ = true
+
+[node name="FloorTest3" parent="." instance=ExtResource("3_wmm8j")]
+position = Vector2(275.333, 300)
+metadata/_edit_lock_ = true
+
+[node name="FloorTest2" parent="." instance=ExtResource("3_wmm8j")]
+position = Vector2(174, 213.333)
+rotation = 1.5708
+metadata/_edit_lock_ = true
+
+[node name="Projectiles" type="Node2D" parent="."]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.85
+blend_mode = 1

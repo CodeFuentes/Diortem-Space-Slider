@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkh0612owc5le"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_asjfb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1fifa"]
+font_size = 28
+
+[sub_resource type="Theme" id="Theme_0o7mw"]
+default_font_size = 28
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_asjfb")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_right = 1280.0
+offset_bottom = 192.0
+theme_override_constants/margin_top = 150
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "SLIDER GAME"
+label_settings = SubResource("LabelSettings_1fifa")
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+
+[node name="StartButton" type="MenuButton" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_0o7mw")
+text = "START"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/StartButton" to="." method="_on_start_button_pressed"]
